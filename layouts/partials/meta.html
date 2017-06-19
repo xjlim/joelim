@@ -8,8 +8,10 @@
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:description" content="{{ .Description }}">
-<meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.image }}">
-<meta property="og:image:type" content="image/jpeg">
+{{ if and (isset .Params "image") (not (eq .Params.image "")) }}
+    <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.image }}">
+    <meta property="og:image:type" content="image/jpeg">
+{{ end }}
 
 {{ if eq .Kind "page" | and (eq .Section "blog") }}
     <meta property="og:type" content="article">
@@ -33,9 +35,9 @@
 <meta name="twitter:site" content="@joe_lim_">
 <meta name="twitter:title" content="{{ .Title }}">
 <meta name="twitter:description" content="{{ .Description }}">
-{{ if isset .Params "image" }}
-    <meta name="twitter:image" content="{{ .Permalink }}{{ .Params.image }}">
+{{ if and (isset .Params "image") (not (eq .Params.image "")) }}
+    <meta name="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.image}}">
 {{ end }}
-{{ if isset .Params "imageAlt" }}
-    <meta name="twitter:image:alt" content="{{ .Params.imageAlt }}">
+{{ if and (isset .Params "imagealt") (not (eq .Params.imagealt "")) }}
+    <meta name="twitter:image:alt" content="{{ .Params.imagealt }}">
 {{ end }}
