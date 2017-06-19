@@ -1,8 +1,0 @@
-User-agent: *
-Disallow:
-
-User-agent: Twitterbot
-Allow: /static
-
-User-agent: facebookexternalhit
-Allow: /static
