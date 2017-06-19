@@ -1,0 +1,159 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #ececec;
+}
+
+a {
+	text-decoration: none;
+}
+
+.links {
+	padding: 10px 0;
+	color: #fff;
+	font-size: 1em;
+	line-height: 1.35;
+	border-radius: 3px;
+	background: #009688;
+	text-align: center;
+}
+
+.footer_links {
+	color: #f21da5;
+	font-size: 0.5em;
+	line-height: 1.35;
+	text-align: center;
+}
+
+.box_links {
+	display: grid;
+	grid-template-columns: 80px 80px 80px 80px;
+	grid-gap: 10px;
+	justify-content: center;
+}
+
+header,
+main {
+	max-width: 600px;
+	margin: 0 auto;
+	text-align: center;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #a29f9f
+}
+
+footer {
+	padding: 10px 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.5em;
+}
+
+header {
+	margin-top: 40px;
+}
+
+#profile {
+	border-radius: 50%;
+	height: 80px;
+	width: 80px;
+}
+
+li {
+	display: flex;
+	margin: 20px 0;
+}
+
+li:last-child {
+	margin-bottom: 80px;
+}
+
+.icon {
+	border-radius: 50%;
+	height: 75px;
+	width: 75px;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.detail {
+	padding-left: 50px;
+	width: 450px;
+	text-align: left;
+}
+
+#name {
+	font-family: 'Dancing Script', cursive;
+	font-size: 3em;
+	padding: 10px;
+	margin: 10px;
+}
+
+#description {
+	font-family: 'Shadows Into Light', cursive;
+	font-size: 1.5em;
+}
+
+#twitter {
+	background-color: #1DA1F2;
+}
+
+#books {
+	background-color: #f79f26;
+}
+
+#tictactoe {
+	background-color: #14bdac;
+}
+
+#hackernews {
+	background-color: #ff6600;
+}
+
+#twitter,
+#books,
+#tictactoe,
+#hackernews {
+	color: #fff;
+	letter-spacing: 0.3em;
+	padding: 0 5px;
+}
+
+#twitch {
+	color: #4b367c;
+	letter-spacing: 0.2em;
+	font-style: italic;
+	font-weight: bold;
+}
+
+#react {
+	color: #1fa5d2;
+	letter-spacing: 0.2em;
+	font-style: italic;
+	font-weight: bold;
+}
+
+@media (max-width: 450px) {
+	.icon {
+		border-radius: 50%;
+		height: 50px;
+		width: 50px;
+	}
+	.detail {
+		padding-left: 20px;
+		width: 300px;
+	}
+	#description {
+		font-size: 1em;
+	}
+	.links {
+		font-size: 0.6em;
+	}
+	.box_links {
+		grid-template-columns: 50px 50px 50px 50px;
+		grid-gap: 10px;
+	}
+}

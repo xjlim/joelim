@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Joe Lim">
+    <meta name="google-site-verification" content="dzK1DBMRz7ZdxHBrCdPZR2LdgZvz743MOkRN60TI-go">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Joe Lim">
+    <meta name=theme-color content=#eb298c>
+    {{ partial "meta.html" . }}
+
+    <base href="{{ .Site.BaseURL }}">
+    <title> {{ .Title }} </title>
+    <link rel="canonical" href="{{ .Permalink }}">
+    {{ if .RSSLink }}
+        <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Title }}">
+    {{ end }}
+
+
+    {{ partial "head_includes.html" . }}
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel=icon type=image/png href=/img/favicon16x16.png sizes=16x16>
+    <link rel=icon type=image/png href=/img/favicon32x32.png sizes=32x32>
+    <link rel=icon type=image/png href=/img/favicon96x96.png sizes=96x96>
+    <link rel=icon type=image/png href=/img/favicon192x192.png sizes=192x192>
+
+    <!-- add to homescreen for windows 8 -->
+    <meta name=msapplication-TileColor content=#2196F3>
+    <meta name=msapplication-TileImage content=/img/favicon144x144.png>
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- add to homescreen for ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Joe Lim">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon60x60.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon120x120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/img/favicon167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon180x180.png">
+
+    <noscript>Your browser does not support JavaScript!</noscript>
+    <script>
+        // load google analytics
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-72215667-1', 'auto');
+        ga('send', 'pageview');
+
+        // load service worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/js/service-worker.js')
+                .then(
+                    reg => console.log('Service Worker installed.')
+                )
+                .catch(
+                    err => console.log('Oops, Service Worker installation failed!', err)
+                );
+        }
+    </script>
+</head>

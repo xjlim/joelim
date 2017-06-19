@@ -1,0 +1,16 @@
+{{ partial "header.html" . }}
+
+<body>
+    {{ partial "subheader.html" }}
+
+    <ul>
+        {{ range .Pages }}
+            {{ .Render "summary"}}
+        {{ end }}
+    </ul>
+
+    {{ partial "footer.html" }}
+
+</body>
+
+</html>

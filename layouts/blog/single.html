@@ -1,0 +1,18 @@
+{{ partial "header.html" . }}
+
+<body>
+
+    {{ partial "subheader.html" }}
+
+    <div class="post">
+        <span class="post_title">{{ .Title }}</span>
+        <span class="post_meta">{{ .Date.Format "Mon, Jan 2, 2006" }} | Estimated Reading Time: {{ .ReadingTime }} mins</span>
+
+        {{ .Content }}
+    </div>
+
+    {{ partial "footer.html" }}
+
+</body>
+
+</html>

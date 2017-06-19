@@ -1,0 +1,12 @@
+<article class="post">
+
+    <h2>
+        <a class="post_links post_title" href="{{ .Permalink }}">{{ .Title }}</a>
+    </h2>
+    <span class="post_meta">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
+
+    {{ .Summary }}
+
+    <p><a class="post_links" href='{{ .Permalink }}'><nobr>Read more ››</nobr></a></p>
+
+</article>
