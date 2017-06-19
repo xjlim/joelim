@@ -6,7 +6,7 @@ keywords = [
     "Blog",
 ]
 tags = [
-    ""
+    "Blog"
 ]
 image = "img/placeholder1200x1200.jpg"
 imageAlt = ""
