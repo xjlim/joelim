@@ -1,13 +1,13 @@
 {{ if eq .Kind "home" }}
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <!--fonts-->
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Shadows+Into+Light" rel="stylesheet">
 {{ else if eq .Kind "page" }}
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/page.css">
+    <link rel="stylesheet" href="css/page.css">
     <!--fonts-->
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway|Crimson+Text" rel="stylesheet">
 {{ else }}
-    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/blog.css">
+    <link rel="stylesheet" href="css/blog.css">
     <!--fonts-->
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway|Crimson+Text" rel="stylesheet">
 {{ end }}
