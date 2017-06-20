@@ -23,6 +23,7 @@ There is a gazillion of blogging solutions available today:
 - CMS like *Wordpress, Joomla*
 - custom client-server architecture with templating engine
 - static site generators like *Jekyll, Hugo*
+- other blogging platforms like *Medium, The Practical Dev*
 
 Like many, I find myself struggling to make a decision in this dilemma. An obvious strategy is to rule out the obvious.
 
@@ -51,6 +52,8 @@ I will be writing a follow-up article detailing the steps I took to get it worki
 Static site generators come with the benefits of being fast, compiled time vs runtime of the client-server architecture. However, they do come with a learning curve and a lock-in to their framework. Jekyll uses Liquid, a Ruby templating engine whereas Hugo uses Blackbird. A switch from one to another will means a complete rewrite if they do not provide an easy migration tool. While building a blog from scratch can seem daunting, it is worthwhile in the long run as you get to work with the technology you are most comfortable with and it provides you with the flexibility to manage your own content.
 
 P.S. Another reason for my choice of technology is that it is generally free and I can use a custom domain. I tend to penny-pinch on the cloud and a custom blog with a custom domain would mean paying for at least $5/month on either Digital Ocean or Linode.
+
+P.S. I am a proactive user of Medium and I like the highlighting feature it offers. Custom domain works too but in the spirit of learning new technologies I decided to go with Hugo instead.
 
 Thanks for reading!
 
