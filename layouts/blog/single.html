@@ -4,10 +4,9 @@
 
     {{ partial "subheader.html" }}
 
+    <span class="post_title">{{ .Title }}</span>
+    <span class="post_meta">{{ .Date.Format "Mon, Jan 2, 2006" }} | Estimated Reading Time: {{ .ReadingTime }} mins</span>
     <div class="post">
-        <span class="post_title">{{ .Title }}</span>
-        <span class="post_meta">{{ .Date.Format "Mon, Jan 2, 2006" }} | Estimated Reading Time: {{ .ReadingTime }} mins</span>
-
         {{ .Content }}
     </div>
 

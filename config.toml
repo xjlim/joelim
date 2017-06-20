@@ -4,3 +4,6 @@ title = "Joe Lim"
 
 [author]
     name = "Joe Lim"
+
+[blackfriday]
+  plainIDAnchors = true
