@@ -1,3 +1,5 @@
+/* blog post */
+
 * {
 	box-sizing: border-box;
 }
@@ -47,9 +49,12 @@ footer {
     font-family: 'Crimson Text', serif;
     padding: 0 10px;
     line-height: 2;
+    width: 50%;
+    margin: 0 auto;
 }
 
 .post_title {
+    font-family: 'Crimson Text', serif;
     line-height: 1.5;
     display: block;
     font-size: 3em;
@@ -58,6 +63,7 @@ footer {
 }
 
 .post_meta {
+    font-family: 'Crimson Text', serif;
     line-height: 1.5;
     display: block;
     font-size: 0.7em;
@@ -68,8 +74,10 @@ footer {
     .brand {
         text-align: center;
     }
+    .post_title {
+        font-size: 2em;
+    }
     .post {
-        font-size: 0.8em;
-        margin: 0 0 40px 0;
+        width: 80%;
     }
 }

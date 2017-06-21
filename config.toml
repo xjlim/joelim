@@ -1,6 +1,9 @@
-baseURL = "https://development.joelim.me/"
+baseURL = "https://joelim.me/"
 languageCode = "en-us"
 title = "Joe Lim"
 
 [author]
     name = "Joe Lim"
+
+[blackfriday]
+  plainIDAnchors = true
