@@ -1,8 +1,8 @@
-{{ if eq .Kind "home" }}
+{{ if .IsHome }}
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <!--fonts-->
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Shadows+Into+Light" rel="stylesheet">
-{{ else if eq .Kind "page" }}
+{{ else if .IsPage }}
     <link rel="stylesheet" type="text/css" href="/css/page.css">
     <!--fonts-->
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Raleway|Crimson+Text" rel="stylesheet">
