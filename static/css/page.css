@@ -95,7 +95,7 @@ img {
     max-width: 100%;
 }
 
-a:hover {
+p a:hover {
     text-decoration: underline;
 }
 

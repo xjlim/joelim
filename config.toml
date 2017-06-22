@@ -2,6 +2,7 @@ baseURL = "https://joelim.me/"
 languageCode = "en-us"
 title = "Joe Lim"
 enableEmoji = true
+googleAnalytics = "UA-72215667-1"
 
 [author]
     name = "Joe Lim"
