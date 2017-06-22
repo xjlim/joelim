@@ -49,7 +49,7 @@ footer {
     font-family: 'Crimson Text', serif;
     padding: 0 10px;
     line-height: 2;
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
 }
 
@@ -70,6 +70,35 @@ footer {
     text-align: center;
 }
 
+pre {
+    border: 5px solid #0077cc;
+    word-break: break-all;
+}
+
+pre code {
+    white-space: pre-wrap;
+}
+
+code {
+    background: #282c34;
+    color: #abb2bf;
+    letter-spacing: 0.2em;
+	font-weight: bold;
+    padding: 0 5px;
+}
+
+a {
+    color: #38bb6c;
+}
+
+img {
+    max-width: 100%;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 @media (max-width: 450px) {
     .brand {
         text-align: center;
@@ -78,6 +107,6 @@ footer {
         font-size: 2em;
     }
     .post {
-        width: 80%;
+        width: 90%;
     }
 }
