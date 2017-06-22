@@ -1,6 +1,7 @@
 baseURL = "https://joelim.me/"
 languageCode = "en-us"
 title = "Joe Lim"
+enableEmoji = true
 
 [author]
     name = "Joe Lim"
