@@ -1,4 +1,5 @@
 baseURL = "https://joelim.me/"
+disableKinds = ["taxonomy", "taxonomyTerm"]
 languageCode = "en-us"
 title = "Joe Lim"
 enableEmoji = true
