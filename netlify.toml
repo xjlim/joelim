@@ -1,0 +1,2 @@
+[context.development.environment]
+    HUGO_BaseURL = "https://development.joelim.me/"
