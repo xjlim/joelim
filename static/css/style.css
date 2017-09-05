@@ -203,6 +203,7 @@ li:last-child {
 	top: 50px;
 	left: 50px;
 }
+
 .closex:hover {
 	stroke: #AD310B;
 	transition: all 1s ease;
@@ -223,7 +224,8 @@ button {
 
 .project-images {
 	display: flex;
-  justify-content: center;
+	justify-content: center;
+	align-items: center;
 }
 
 .project-images  img {
@@ -244,7 +246,7 @@ button {
 }
 
 .project-detail  div {
-	padding: 20px;
+	margin: 20px;
 }
 
 .project-detail p {
@@ -264,6 +266,12 @@ button {
 	justify-content: space-between;
 	align-items: center;
 	font-size: 3em;
+	padding: 20px;
+}
+
+.emoji img {
+	width: 100px;
+	height: 100px;
 }
 
 .emoji i {
@@ -274,6 +282,33 @@ button {
 }
 
 @media (max-width: 450px) {
+	.project-detail  div {
+		margin: 10px;
+	}
+
+	#close {
+		position: fixed;
+		top: 10px;
+		left: 10px;
+	}
+
+	.project-images  {
+		flex-direction: column;
+	}
+
+	.emoji {
+		font-size: 1em;
+	}
+
+	.project-detail {
+		font-size: 1em;
+	}
+
+	.emoji img {
+		width: 40px;
+		height: 40px;
+	}
+
 	.project-intro {
 		margin: 5px;
 		max-width: 150px;
