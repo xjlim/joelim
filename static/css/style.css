@@ -90,6 +90,7 @@ li:last-child {
 	font-size: 3em;
 	padding: 10px;
 	margin: 10px;
+	color: #9C27B0;
 }
 
 #description {
@@ -136,7 +137,155 @@ li:last-child {
 	font-weight: bold;
 }
 
+.project {
+	margin: 0 auto;
+	width: 80%;
+	color: #ffdc71;
+}
+
+.project li {
+	background: #7e57c2;
+	border: 2px solid #002937;
+	box-shadow: 5px 5px 0 0 #42A5F5	, 5px 5px 0 2px #002937;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 4px;
+}
+
+.project li:hover {
+	cursor: pointer;
+}
+
+.project-meta-container {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	justify-content: center;
+}
+
+.project-logo {
+	width: 100px;
+	height: 100px;
+}
+
+.project-intro {
+	margin: 20px;
+	max-width: 200px;
+	width: 100%;
+}
+
+.project-title {
+	border-bottom: 2px solid transparent;
+	border-image: linear-gradient(90deg, #FFEE58, #FF7043, #7e57c2);
+	border-image-slice: 1
+}
+
+.project-icon div {
+	padding: 10px;
+}
+
+.modal {
+	padding-top: 50px;
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	overflow: auto;
+	width: 100%;
+	height: 100%;
+	background: #009688;
+	z-index: 1;
+	cursor: pointer;
+}
+
+#close {
+	position: fixed;
+	top: 50px;
+	left: 50px;
+}
+.closex:hover {
+	stroke: #AD310B;
+	transition: all 1s ease;
+}
+
+button {
+	padding: 10px;
+	font-size: 1.5em;
+	font-weight: bolder;
+	border: 2px solid #cc66ff;
+	border-radius: 4px;
+	background: #212121;
+	color: #cc66ff;
+	font-family: 'Dancing Script', cursive;
+	max-width: 200px;
+	width: 100%;
+}
+
+.project-images {
+	display: flex;
+  justify-content: center;
+}
+
+.project-images  img {
+	width: 200px;
+	height: 200px;
+  margin: 30px;
+}
+
+.project-detail {
+	display: grid;
+	grid-template-columns: 60% 40%;
+	grid-gap: 10px;
+	padding: 20px;
+	text-align: left;
+	line-height: 1.35;
+	font-size: 1.35em;
+	font-family: Fira Code, sans-serif;
+}
+
+.project-detail  div {
+	padding: 20px;
+}
+
+.project-detail p {
+	color: #fff;
+}
+
+.project-detail-title {
+	font-size: 3em;
+	line-height: 0.8em;
+	font-family: 'Shadows Into Light', cursive;
+}
+
+.emoji {
+	transform: scaleX(-1);
+	filter: FlipH;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 3em;
+}
+
+.emoji i {
+	background: -webkit-linear-gradient(180deg, #fc1da7, #fba506);
+	background: linear-gradient(top, #fc1da7, #fba506);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
 @media (max-width: 450px) {
+	.project-intro {
+		margin: 5px;
+		max-width: 150px;
+		width: 100%;
+	}
+
+	.project-logo {
+		margin: 5px;
+		width: 50px;
+		height: 50px;
+	}
+
 	.icon {
 		border-radius: 50%;
 		height: 50px;

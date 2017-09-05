@@ -7,22 +7,88 @@
         <h3 id="name">Joe Lim</h3>
 
         <nav class="box_links">
-            <a class="links" href="https://github.com/xjlim">GitHub</a>
-            <a class="links" href="https://ca.linkedin.com/in/limjoe">LinkedIn</a>
-            <a class="links" href="https://codepen.io/xjlim">CodePen</a>
+            <a class="links" href="https://github.com/xjlim" target="_blank">GitHub</a>
+            <a class="links" href="https://ca.linkedin.com/in/limjoe" target="_blank">LinkedIn</a>
+            <a class="links" href="https://codepen.io/xjlim" target="_blank">CodePen</a>
             {{ with .Site.GetPage "section" "blog" }}
-                <a class="links" href="/blog">Blog</a>
+            <a class="links" href="/blog">Blog</a>
             {{ end }}
         </nav>
     </header>
 
     <main class="main">
-        <p id="description">
+        <div class="emoji">
+            🚗<i class="fa fa-chevron-left" aria-hidden="true"></i>🏍<i class="fa fa-chevron-left" aria-hidden="true"></i>🚲<i class="fa fa-chevron-left" aria-hidden="true"></i>🛴<i class="fa fa-chevron-left" aria-hidden="true"></i>
+            <img width="100" height="100" src="/img/skateboard.webp" alt="skateboard" title="skateboard"/>
+        </div>
 
-        I like to keep up with latest tech news on <a id="twitter" href="https://twitter.com/joe_lim_">Twitter</a>, read
-        <a id="books" href="https://gist.github.com/xjlim/3dbb23ec081c865b841c029b63e9b6bb">books</a> and watch <span id="twitch">Twitch</span>      streams. <br><br> I am currently playing with <span id="react">React</span>, following tutorials to create a <a id="tictactoe"
-            href="https://react-tic-tac-toe-demo.netlify.com">Tic Tac Toe</a> game and a <a id="hackernews" href="http://react-hackernews-demo.netlify.com/">HackerNews</a>      app.
-        </p>
+        <ul class="project">
+            {{ range $index, $element := where .Pages "Section" "projects" }}
+                <li onclick="document.getElementById('modal{{$index}}').style.display='block';">
+                    <img class="project-logo" src={{.Params.logo}} alt={{.Params.logoAlt}} title={{.Params.logoAlt}} />
+                    <div class="project-intro">
+                        <h3 class="project-title">{{ .Title }}</h3>
+                        <div class="project-meta-container">
+                            <span>
+                                <i class="fa fa-th-list" aria-hidden="true">
+                                    <div>{{ .Params.projectType }}</div>
+                                </i>
+                            </span>
+                            <span>
+                                <i class="fa fa-calendar-check-o" aria-hidden="true">
+                                    <div>{{ .Params.completed }}</div>
+                                </i>
+                            </span>
+                        </div>
+                        <p>{{ .Description }}</p>
+                    </div>
+                </li>
+                <div class="modal" id="modal{{$index}}">
+                    <svg onclick="document.getElementById('modal{{$index}}').style.display='none';" id="close" xmlns="http://www.w3.org/2000/svg" height="50" width="50">
+                        <circle cx="25" cy="25" r="25" fill="#fff" />
+                        <text class="closex" x="25" y="25" text-anchor="middle" font-size="3em" stroke="#009688" stroke-width="5px" alignment-baseline="middle">
+                            &times;
+                        </text>
+                    </svg>
+                    <h3 class="project-detail-title">{{ .Title }}</h3>
+                    {{ if and (isset .Params "siteurl") (not (eq .Params.siteurl "")) }}
+                        <a href="{{ .Params.siteurl }}" target="_blank">
+                            <button>
+                                Site
+                            </button>
+                        </a>
+                    {{ else if and (isset .Params "sourceurl") (not (eq .Params.sourceurl "")) }}
+                        <a href="{{ .Params.sourceurl }}" target="_blank">
+                            <button>
+                                Source
+                            </button>
+                        </a>
+                    {{ end }}
+                    <div class="project-images">
+                        {{ range .Params.images }}
+                            <img  src="{{.src}}" alt="{{.alt}}" title="{{.alt}}" />
+                        {{ end }}
+                    </div>
+                    <div class="project-detail">
+                        <div>
+                            <span>Description:</span>
+                            <p>
+                                {{ .Params.detail}}
+                            </p>
+                        </div>
+                        <div>
+                            <span>Technologies:</span>
+                            <p>
+                                {{ range .Params.technologies }}
+                                    {{ . }}
+                                    <br />
+                                {{ end }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {{ end }}
+        </ul>
     </main>
 
     {{ partial "footer.html" }}
