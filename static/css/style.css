@@ -281,6 +281,15 @@ button {
 	-webkit-text-fill-color: transparent;
 }
 
+img {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+img[data-src]  {
+  opacity: 0;
+}
+
 @media (max-width: 450px) {
 	.project-detail  div {
 		margin: 10px;

@@ -24,7 +24,7 @@
 
         <ul class="project">
             {{ range $index, $element := where .Pages "Section" "projects" }}
-                <li onclick="document.getElementById('modal{{$index}}').style.display='block';">
+                <li onclick="document.getElementById('modal{{$index}}').style.display='block';Array.from(document.querySelectorAll('#modal{{$index}} img[data-src]')).forEach(img=>{img.setAttribute('src',img.getAttribute('data-src')),img.onload=()=>{img.removeAttribute('data-src')}});">
                     <img class="project-logo" src={{.Params.logo}} alt={{.Params.logoAlt}} title={{.Params.logoAlt}} />
                     <div class="project-intro">
                         <h3 class="project-title">{{ .Title }}</h3>
@@ -66,7 +66,7 @@
                     {{ end }}
                     <div class="project-images">
                         {{ range .Params.images }}
-                            <img  src="{{.src}}" alt="{{.alt}}" title="{{.alt}}" />
+                            <img  data-src="{{.src}}" alt="{{.alt}}" title="{{.alt}}" />
                         {{ end }}
                     </div>
                     <div class="project-detail">
