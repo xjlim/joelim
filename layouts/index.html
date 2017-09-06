@@ -11,19 +11,22 @@
             <a class="links" href="https://ca.linkedin.com/in/limjoe" target="_blank">LinkedIn</a>
             <a class="links" href="https://codepen.io/xjlim" target="_blank">CodePen</a>
             {{ with .Site.GetPage "section" "blog" }}
+            <a class="links" href="mailto:jlim3131@gmail.com">Email</a>
             <a class="links" href="/blog">Blog</a>
             {{ end }}
         </nav>
     </header>
 
     <main class="main">
-        <div class="emoji">
-            🚗<i class="fa fa-chevron-left" aria-hidden="true"></i>🏍<i class="fa fa-chevron-left" aria-hidden="true"></i>🚲<i class="fa fa-chevron-left" aria-hidden="true"></i>🛴<i class="fa fa-chevron-left" aria-hidden="true"></i>
-            <img src="/img/skateboard.webp" alt="skateboard" title="skateboard"/>
-        </div>
-
-        <ul class="project">
-            {{ range $index, $element := where .Pages "Section" "projects" }}
+        <section id="agileMVP">
+            <div class="emoji">
+                🚗<i class="fa fa-chevron-left" aria-hidden="true"></i>🏍<i class="fa fa-chevron-left" aria-hidden="true"></i>🚲<i class="fa fa-chevron-left" aria-hidden="true"></i>🛴<i class="fa fa-chevron-left" aria-hidden="true"></i>
+                <img src="/img/skateboard.webp" alt="skateboard" title="skateboard"/>
+            </div>
+        </section>
+        <section id="project">
+            <ul class="project">
+                {{ range $index, $element := where .Pages "Section" "projects" }}
                 <li onclick="document.getElementById('modal{{$index}}').style.display='block';Array.from(document.querySelectorAll('#modal{{$index}} img[data-src]')).forEach(img=>{img.setAttribute('src',img.getAttribute('data-src')),img.onload=()=>{img.removeAttribute('data-src')}});">
                     <img class="project-logo" src={{.Params.logo}} alt={{.Params.logoAlt}} title={{.Params.logoAlt}} />
                     <div class="project-intro">
@@ -52,21 +55,21 @@
                     </svg>
                     <h3 class="project-detail-title">{{ .Title }}</h3>
                     {{ if and (isset .Params "siteurl") (not (eq .Params.siteurl "")) }}
-                        <a href="{{ .Params.siteurl }}" target="_blank">
-                            <button>
-                                Site
-                            </button>
-                        </a>
+                    <a href="{{ .Params.siteurl }}" target="_blank">
+                        <button>
+                            Site
+                        </button>
+                    </a>
                     {{ else if and (isset .Params "sourceurl") (not (eq .Params.sourceurl "")) }}
-                        <a href="{{ .Params.sourceurl }}" target="_blank">
-                            <button>
-                                Source
-                            </button>
-                        </a>
+                    <a href="{{ .Params.sourceurl }}" target="_blank">
+                        <button>
+                            Source
+                        </button>
+                    </a>
                     {{ end }}
                     <div class="project-images">
                         {{ range .Params.images }}
-                            <img  data-src="{{.src}}" alt="{{.alt}}" title="{{.alt}}" />
+                        <img  data-src="{{.src}}" alt="{{.alt}}" title="{{.alt}}" />
                         {{ end }}
                     </div>
                     <div class="project-detail">
@@ -80,19 +83,39 @@
                             <span>Technologies:</span>
                             <p>
                                 {{ range .Params.technologies }}
-                                    {{ . }}
-                                    <br />
+                                {{ . }}
+                                <br />
                                 {{ end }}
                             </p>
                         </div>
                     </div>
                 </div>
-            {{ end }}
-        </ul>
+                {{ end }}
+            </ul>
+        </section>
+        <section id="resume">
+            <iframe id="resumeIframe" scrolling="no" width="520" height="320"></iframe>
+        </section>
     </main>
 
     {{ partial "footer.html" }}
 
+    <script>
+        const widthChange = (mediaquery) => {
+            const iframe = document.getElementById("resumeIframe");
+            if (mediaquery.matches) {
+                iframe.src = 'https://public.tableau.com/views/joelimresume/RsumMobile?:embed=y&:display_count=yes&:toolbar=no';
+            } else {
+                iframe.src = "https://public.tableau.com/views/joelimresume/RsumTablet?:embed=y&:display_count=yes&:toolbar=no&:showVizHome=no";
+            }
+        }
+
+        if (matchMedia) {
+            const mq = window.matchMedia("(max-width: 450px)");
+            mq.addListener(widthChange);
+            widthChange(mq);
+        }
+    </script>
 </body>
 
 </html>
