@@ -7,12 +7,12 @@
         <h3 id="name">Joe Lim</h3>
 
         <nav class="box_links">
-            <a class="links" href="https://github.com/xjlim" target="_blank">GitHub</a>
-            <a class="links" href="https://ca.linkedin.com/in/limjoe" target="_blank">LinkedIn</a>
-            <a class="links" href="https://codepen.io/xjlim" target="_blank">CodePen</a>
+            <a class="links" href="https://github.com/xjlim" target="_blank"><i class="fa fa-github"></i></a>
+            <a class="links" href="https://ca.linkedin.com/in/limjoe" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+            <a class="links" href="https://codepen.io/xjlim" target="_blank"><i class="fa fa-codepen"></i></a>
+            <a class="links" href="mailto:jlim3131@gmail.com"><i class="fa fa-envelope"></i></a>
             {{ with .Site.GetPage "section" "blog" }}
-            <a class="links" href="mailto:jlim3131@gmail.com">Email</a>
-            <a class="links" href="/blog">Blog</a>
+                <a class="links" href="/blog"><i class="fa fa-pencil"></i></a>
             {{ end }}
         </nav>
     </header>
@@ -33,7 +33,7 @@
                         <h3 class="project-title">{{ .Title }}</h3>
                         <div class="project-meta-container">
                             <span>
-                                <i class="fa fa-th-list" aria-hidden="true">
+                                <i class="fa fa-server" aria-hidden="true">
                                     <div>{{ .Params.projectType }}</div>
                                 </i>
                             </span>

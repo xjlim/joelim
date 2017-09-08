@@ -11,13 +11,8 @@ a {
 }
 
 .links {
-	padding: 10px 0;
-	color: #fff;
-	font-size: 1em;
-	line-height: 1.35;
-	border-radius: 3px;
-	background: #009688;
-	text-align: center;
+	font-size: 3em;
+	color: #ff5252;
 }
 
 .footer_links {
@@ -29,8 +24,8 @@ a {
 
 .box_links {
 	display: grid;
-	grid-template-columns: 70px 70px 70px 70px 70px;
-	grid-gap: 10px;
+	grid-template-columns: repeat(5, 40px);
+	grid-gap: 40px;
 	justify-content: center;
 }
 
@@ -266,13 +261,13 @@ button {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	font-size: 3em;
+	font-size: 2em;
 	padding: 20px;
 }
 
 .emoji img {
-	width: 100px;
-	height: 100px;
+	width: 70px;
+	height: 70px;
 }
 
 .emoji i {
@@ -348,15 +343,20 @@ img[data-src]  {
 		font-size: 1em;
 	}
 	.links {
-		font-size: 0.6em;
+		font-size: 2em;
 	}
 	.box_links {
-		grid-template-columns: 40px 40px 40px 40px 40px;
-		grid-gap: 10px;
+		grid-template-columns: repeat(5,30px);
+		grid-gap: 30px;
 	}
 
 	iframe {
 		width: 350px;
 		height: 350px;
+	}
+
+	main,
+	header {
+		max-width: 350px;
 	}
 }
