@@ -21,14 +21,14 @@
         <section id="agileMVP">
             <div class="emoji">
                 🚗<i class="fa fa-chevron-left" aria-hidden="true"></i>🏍<i class="fa fa-chevron-left" aria-hidden="true"></i>🚲<i class="fa fa-chevron-left" aria-hidden="true"></i>🛴<i class="fa fa-chevron-left" aria-hidden="true"></i>
-                <img src="/img/skateboard.webp" alt="skateboard" title="skateboard"/>
+                <img src="/img/skateboard.webp" alt="skateboard" title="skateboard" onerror="this.onerror=null; this.src='/img/skateboard.png'"/>
             </div>
         </section>
         <section id="project">
             <ul class="project">
                 {{ range $index, $element := where .Pages "Section" "projects" }}
-                <li onclick="document.getElementById('modal{{$index}}').style.display='block';Array.from(document.querySelectorAll('#modal{{$index}} img[data-src]')).forEach(img=>{img.setAttribute('src',img.getAttribute('data-src')),img.onload=()=>{img.removeAttribute('data-src')}});">
-                    <img class="project-logo" src={{.Params.logo}} alt={{.Params.logoAlt}} title={{.Params.logoAlt}} />
+                <li onclick="document.getElementById('modal{{$index}}').style.display='block';Array.from(document.querySelectorAll('#modal{{$index}} img[data-src]')).forEach(img=>{img.setAttribute('src',img.getAttribute('data-src'));img.onload=()=>{img.removeAttribute('data-src')};img.onerror=()=>{img.onerror=null;img.src=img.getAttribute('src').replace('.webp','.png');};});">
+                    <img class="project-logo" src={{.Params.logo}} alt={{.Params.logoAlt}} title={{.Params.logoAlt}} onerror="this.onerror=null; this.src='{{replace .Params.logo ".webp" ".png"}}'" />
                     <div class="project-intro">
                         <h3 class="project-title">{{ .Title }}</h3>
                         <div class="project-meta-container">
