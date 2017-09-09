@@ -27,7 +27,7 @@
         <section id="project">
             <ul class="project">
                 {{ range $index, $element := where .Pages "Section" "projects" }}
-                <li onclick="document.getElementById('modal{{$index}}').style.display='block';Array.from(document.querySelectorAll('#modal{{$index}} img[data-src]')).forEach(img=>{img.setAttribute('src',img.getAttribute('data-src'));img.onload=()=>{img.removeAttribute('data-src')};img.onerror=()=>{img.onerror=null;img.src=img.getAttribute('src').replace('.webp','.png');};});">
+                <li onclick="document.getElementById('modal{{$index}}').style.display='block';[].forEach.call(document.querySelectorAll('#modal{{$index}} img[data-src]'),function(img){img.setAttribute('src',img.getAttribute('data-src'));img.onload=function(){img.removeAttribute('data-src');};img.onerror=function(){img.onerror=null;img.src=img.getAttribute('src').replace('.webp','.png');};});">
                     <img class="project-logo" src={{.Params.logo}} alt={{.Params.logoAlt}} title={{.Params.logoAlt}} onerror="this.onerror=null; this.src='{{replace .Params.logo ".webp" ".png"}}'" />
                     <div class="project-intro">
                         <h3 class="project-title">{{ .Title }}</h3>
@@ -101,8 +101,8 @@
     {{ partial "footer.html" }}
 
     <script>
-        const widthChange = (mediaquery) => {
-            const iframe = document.getElementById("resumeIframe");
+        function widthChange(mediaquery) {
+            var iframe = document.getElementById("resumeIframe");
             if (mediaquery.matches) {
                 iframe.src = 'https://public.tableau.com/views/joelimresume/RsumMobile?:embed=y&:display_count=yes&:toolbar=no';
             } else {
@@ -111,7 +111,7 @@
         }
 
         if (matchMedia) {
-            const mq = window.matchMedia("(max-width: 450px)");
+            var mq = window.matchMedia("(max-width: 450px)");
             mq.addListener(widthChange);
             widthChange(mq);
         }

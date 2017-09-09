@@ -53,12 +53,12 @@
         // load service worker
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/js/service-worker.js')
-                .then(
-                    reg => console.log('Service Worker installed.')
-                )
-                .catch(
-                    err => console.log('Oops, Service Worker installation failed!', err)
-                );
+                .then(function(reg) {
+                    console.log('Service Worker installed.');
+                })
+                .catch(function(err) {
+                    console.log('Oops, Service Worker installation failed!', err);
+                });
         }
     </script>
     {{ template "_internal/google_analytics_async.html" . }}
